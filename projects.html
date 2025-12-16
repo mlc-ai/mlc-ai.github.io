@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - MLC</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/includes.js" defer></script>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Projects</h1>
+                <p class="page-description">
+                    Explore our comprehensive suite of tools and libraries for high-performance 
+                    machine learning compilations across diverse hardware platforms.
+                </p>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section class="featured-projects">
+            <div class="container">
+                <h2 class="section-title">Core Projects</h2>
+
+                <!-- MLC LLM -->
+                <div class="project-showcase" id="mlc-llm">
+                    <div class="project-content">
+                        <div class="project-info">
+                            <div class="project-badge">
+                                <i class="fas fa-microchip"></i>
+                                <span>Featured</span>
+                            </div>
+                            <h3>MLC LLM</h3>
+                            <p class="project-summary">
+                                High-performance, memory-efficient LLM inference across devices and backends.
+                                Built with advanced compilation and runtime optimizations for CPUs, GPUs, and mobile.
+                            </p>
+                            <div class="project-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Universal hardware support</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Advanced memory optimization</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Dynamic batching support</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Python & JavaScript APIs</span>
+                                </div>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/mlc-ai/mlc-llm" class="btn btn-primary" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i>
+                                    View on GitHub
+                                </a>
+                                <a href="https://mlc.ai/docs/getting-started" class="btn btn-secondary" target="_blank" rel="noopener">
+                                    <i class="fas fa-book"></i>
+                                    Documentation
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <div class="code-snippet">
+                                <div class="code-header">
+                                    <span class="code-title">Quick Start</span>
+                                    <button class="copy-btn" data-copy="pip install mlc-llm">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <pre><code>pip install mlc-llm
+# Load and run a model
+import mlc_llm
+model = mlc_llm.load("Llama-2-7b-chat")
+response = model.generate("Hello, world!")</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WebLLM -->
+                <div class="project-showcase" id="webllm">
+                    <div class="project-content reverse">
+                        <div class="project-visual">
+                            <div class="mobile-preview">
+                                <div class="phone-frame">
+                                    <div class="phone-screen">
+                                        <div class="app-interface">
+                                            <div class="chat-bubble user">Hello, AI!</div>
+                                            <div class="chat-bubble ai">Hi! I'm running fully in your browser via WebLLM.</div>
+                                            <div class="typing-indicator">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-badge">
+                                <i class="fas fa-globe"></i>
+                                <span>Web</span>
+                            </div>
+                            <h3>WebLLM</h3>
+                            <p class="project-summary">
+                                In-browser LLM inference on WebGPU with zero server dependency.
+                                Ship private, fast AI experiences that run entirely client-side.
+                            </p>
+                            <div class="project-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>WebGPU acceleration</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>On-device inference</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Privacy-preserving</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Offline capable</span>
+                                </div>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/mlc-ai/web-llm" class="btn btn-primary" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i>
+                                    View on GitHub
+                                </a>
+                                <a href="https://mlc.ai/web-llm" class="btn btn-secondary" target="_blank" rel="noopener">
+                                    <i class="fas fa-book"></i>
+                                    Web Guide
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FlexFlow Serve -->
+                <div class="project-showcase" id="flexflow-serve">
+                    <div class="project-content">
+                        <div class="project-info">
+                            <div class="project-badge">
+                                <i class="fas fa-server"></i>
+                                <span>Serving</span>
+                            </div>
+                            <h3>FlexFlow Serve</h3>
+                            <p class="project-summary">
+                                Low-latency, high-performance LLM serving built on speculative inference.
+                                Tree-based speculative decoding and token tree verification to
+                                significantly reduce end-to-end latency while preserving model quality.
+                            </p>
+                            <div class="project-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Low-latency LLM inference</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Tree-based speculative decoding</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Token tree verification</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Co-serving PEFT & inference</span>
+                                </div>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/flexflow/flexflow-serve" class="btn btn-primary" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i>
+                                    View on GitHub
+                                </a>
+                                <a href="https://mlc.ai/docs/serve" class="btn btn-secondary" target="_blank" rel="noopener">
+                                    <i class="fas fa-book"></i>
+                                    Serving Guide
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <div class="architecture-diagram">
+                                <div class="diagram-container">
+                                    <div class="diagram-layer">
+                                        <div class="diagram-item client">
+                                            <i class="fas fa-desktop"></i>
+                                            <span>Clients</span>
+                                        </div>
+                                    </div>
+                                    <div class="diagram-layer">
+                                        <div class="diagram-item load-balancer">
+                                            <i class="fas fa-balance-scale"></i>
+                                            <span>Inference/PEFT Requests</span>
+                                        </div>
+                                    </div>
+                                    <div class="diagram-layer">
+                                        <div class="diagram-item server">
+                                            <i class="fas fa-server"></i>
+                                            <span>FlexFlow Serve</span>
+                                        </div>
+                                        <div class="diagram-item server">
+                                            <i class="fas fa-server"></i>
+                                            <span>FlexFlow Serve</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mirage -->
+                <div class="project-showcase" id="mirage">
+                    <div class="project-content reverse">
+                        <div class="project-visual">
+                            <div class="architecture-diagram">
+                                <div class="diagram-container">
+                                    <div class="diagram-layer">
+                                        <div class="diagram-item client">
+                                            <i class="fas fa-cogs"></i>
+                                            <span>Compiler</span>
+                                        </div>
+                                    </div>
+                                    <div class="diagram-layer">
+                                        <div class="diagram-item load-balancer">
+                                            <i class="fas fa-magic"></i>
+                                            <span>Persistent Kernel</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-badge">
+                                <i class="fas fa-magic"></i>
+                                <span>Optimization</span>
+                            </div>
+                            <h3>Mirage</h3>
+                            <p class="project-summary">
+                                Automated kernel and graph optimization for LLM workloads.
+                                Explore schedule search and code generation for maximum performance.
+                            </p>
+                            <div class="project-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Task Auto-scheduling</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>MegaKernel generation</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Hardware-aware optimization</span>
+                                </div>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/mirage-project/mirage" class="btn btn-primary" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i>
+                                    View on GitHub
+                                </a>
+                                <a href="https://mlc.ai/docs/mirage" class="btn btn-secondary" target="_blank" rel="noopener">
+                                    <i class="fas fa-book"></i>
+                                    Mirage Docs
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- XGrammar -->
+                <div class="project-showcase" id="xgrammar">
+                    <div class="project-content">
+                        <div class="project-info">
+                            <div class="project-badge">
+                                <i class="fas fa-language"></i>
+                                <span>Grammar</span>
+                            </div>
+                            <h3>XGrammar</h3>
+                            <p class="project-summary">
+                                Constrained decoding with expressive grammars for structured generation.
+                                Produce JSON, SQL, and domain-specific formats reliably.
+                            </p>
+                            <div class="project-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Deterministic outputs</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Grammar-based control</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Easy integration</span>
+                                </div>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/mlc-ai/xgrammar" class="btn btn-primary" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i>
+                                    View on GitHub
+                                </a>
+                                <a href="https://mlc.ai/docs/xgrammar" class="btn btn-secondary" target="_blank" rel="noopener">
+                                    <i class="fas fa-book"></i>
+                                    XGrammar Docs
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <div class="code-snippet">
+                                <div class="code-header">
+                                    <span class="code-title">Constrained Decoding</span>
+                                    <button class="copy-btn" data-copy="xgrammar --schema schema.json">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+<pre><code>{
+  "type": "object",
+  "properties": { "name": { "type": "string" } },
+  "required": ["name"]
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Projects -->
+        <!--
+        <section class="additional-projects">
+            <div class="container">
+                <h2 class="section-title">Additional Tools & Libraries</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>MLC-LLM Tools</h3>
+                        <p>Command-line utilities and development tools for model conversion, optimization, and debugging.</p>
+                        <div class="project-stats">
+                            <span class="stat">
+                                <i class="fas fa-download"></i>
+                                50+ tools
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-code"></i>
+                                Python/C++
+                            </span>
+                        </div>
+                        <a href="https://github.com/mlc-ai/mlc-llm-tools" class="project-link" target="_blank" rel="noopener">
+                            View Repository <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Model Hub</h3>
+                        <p>Centralized repository of pre-optimized models with easy download and deployment capabilities.</p>
+                        <div class="project-stats">
+                            <span class="stat">
+                                <i class="fas fa-brain"></i>
+                                100+ models
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-download"></i>
+                                Auto-download
+                            </span>
+                        </div>
+                        <a href="https://huggingface.co/mlc-ai" class="project-link" target="_blank" rel="noopener">
+                            Browse Models <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Benchmark Suite</h3>
+                        <p>Comprehensive benchmarking tools for performance evaluation across different hardware platforms.</p>
+                        <div class="project-stats">
+                            <span class="stat">
+                                <i class="fas fa-tachometer-alt"></i>
+                                Performance tests
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-microchip"></i>
+                                Multi-platform
+                            </span>
+                        </div>
+                        <a href="https://github.com/mlc-ai/mlc-llm-benchmarks" class="project-link" target="_blank" rel="noopener">
+                            View Benchmarks <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h3>Extensions</h3>
+                        <p>Plugin system and extensions for custom model formats, hardware backends, and integrations.</p>
+                        <div class="project-stats">
+                            <span class="stat">
+                                <i class="fas fa-puzzle-piece"></i>
+                                Extensible
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-code"></i>
+                                Plugin API
+                            </span>
+                        </div>
+                        <a href="https://github.com/mlc-ai/mlc-llm-extensions" class="project-link" target="_blank" rel="noopener">
+                            View Extensions <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Examples & Tutorials</h3>
+                        <p>Comprehensive examples, tutorials, and educational resources for learning MLC-LLM.</p>
+                        <div class="project-stats">
+                            <span class="stat">
+                                <i class="fas fa-book"></i>
+                                200+ examples
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-play"></i>
+                                Interactive
+                            </span>
+                        </div>
+                        <a href="https://github.com/mlc-ai/mlc-llm-examples" class="project-link" target="_blank" rel="noopener">
+                            View Examples <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Integration</h3>
+                        <p>Ready-to-deploy cloud solutions and integrations for AWS, GCP, Azure, and other platforms.</p>
+                        <div class="project-stats">
+                            <span class="stat">
+                                <i class="fas fa-cloud"></i>
+                                Multi-cloud
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-rocket"></i>
+                                One-click deploy
+                            </span>
+                        </div>
+                        <a href="https://github.com/mlc-ai/mlc-llm-cloud" class="project-link" target="_blank" rel="noopener">
+                            View Cloud Tools <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        -->
+
+        <!-- Getting Started -->
+        <!-- 
+        <section class="getting-started">
+            <div class="container">
+                <h2 class="section-title">Get Started</h2>
+                <div class="getting-started-content">
+                    <div class="getting-started-info">
+                        <h3>Ready to build with MLC-LLM?</h3>
+                        <p>
+                            Choose your preferred platform and start building high-performance 
+                            AI applications with our comprehensive toolkit.
+                        </p>
+                        <div class="platform-options">
+                            <div class="platform-option">
+                                <i class="fas fa-laptop-code"></i>
+                                <h4>Desktop Development</h4>
+                                <p>Perfect for development and testing</p>
+                                <a href="https://mlc.ai/docs/getting-started" class="btn btn-outline">Get Started</a>
+                            </div>
+                            <div class="platform-option">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h4>Mobile Deployment</h4>
+                                <p>Deploy AI models to mobile apps</p>
+                                <a href="https://mlc.ai/docs/mobile" class="btn btn-outline">Mobile Guide</a>
+                            </div>
+                            <div class="platform-option">
+                                <i class="fas fa-server"></i>
+                                <h4>Production Serving</h4>
+                                <p>Scale your AI applications</p>
+                                <a href="https://mlc.ai/docs/serve" class="btn btn-outline">Serving Guide</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="getting-started-visual">
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <div class="terminal-buttons">
+                                    <span class="btn-red"></span>
+                                    <span class="btn-yellow"></span>
+                                    <span class="btn-green"></span>
+                                </div>
+                                <span class="terminal-title">Terminal</span>
+                            </div>
+                            <div class="terminal-content">
+                                <div class="terminal-line">
+                                    <span class="prompt">$</span>
+                                    <span class="command">pip install mlc-llm</span>
+                                </div>
+                                <div class="terminal-line">
+                                    <span class="output">Installing MLC-LLM...</span>
+                                </div>
+                                <div class="terminal-line">
+                                    <span class="prompt">$</span>
+                                    <span class="command">python -c "import mlc_llm; print('Ready!')"</span>
+                                </div>
+                                <div class="terminal-line">
+                                    <span class="output success">Ready!</span>
+                                </div>
+                                <div class="terminal-line">
+                                    <span class="prompt">$</span>
+                                    <span class="cursor">_</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        -->
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - MLC</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/includes.js" defer></script>
+    <style>
+        /* Course Page Styles */
+        .tutorials-section {
+            padding: 80px 0;
+            background: var(--bg-primary);
+        }
+
+        .tutorials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tutorial-card {
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .tutorial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .tutorial-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .tutorial-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .tutorial-badge i {
+            font-size: 0.875rem;
+        }
+
+        .tutorial-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+
+        .tutorial-meta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+
+        .tutorial-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tutorial-meta-item i {
+            font-size: 1rem;
+        }
+
+        .tutorial-content {
+            padding: 2.5rem;
+        }
+
+        .tutorial-abstract {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .tutorial-topics {
+            margin-bottom: 2rem;
+        }
+
+        .tutorial-topics h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .topics-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+            list-style: none;
+        }
+
+        .topics-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .topics-list li::before {
+            content: '▸';
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .tutorial-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tutorial-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .tutorial-link:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .tutorial-link.secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .tutorial-link.secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .tutorial-title {
+                font-size: 1.5rem;
+            }
+
+            .tutorial-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .tutorial-header {
+                padding: 1.5rem;
+            }
+
+            .tutorial-abstract {
+                font-size: 1rem;
+            }
+
+            .topics-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Courses</h1>
+                <p class="page-description">
+                    Explore our public courses and comprehensive tutorials presented at top-tier academic conferences, 
+                    covering efficient systems and compilers for generative AI and large language models.
+                </p>
+            </div>
+        </section>
+
+        <!-- Tutorials Section -->
+        <section class="tutorials-section">
+            <div class="container">
+                <div class="tutorials-grid">
+                    <!-- MLC Course -->
+                    <div class="tutorial-card">
+                        <div class="tutorial-header">
+                            <div class="tutorial-badge">
+                                <i class="fas fa-book"></i>
+                                <span>Online Course</span>
+                            </div>
+                            <h2 class="tutorial-title">Machine Learning Compiler</h2>
+                            <div class="tutorial-meta">
+                                <div class="tutorial-meta-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>July 2022</span>
+                                </div>
+                                <div class="tutorial-meta-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>Tianqi Chen</span>
+                                </div>
+                                <div class="tutorial-meta-item">
+                                    <i class="fas fa-globe"></i>
+                                    <span>mlc.ai</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tutorial-content">
+                            <p class="tutorial-abstract">
+                                A comprehensive course on machine learning compilation, offering the first systematic treatment 
+                                of key elements in this emerging field. Learn about ML programming abstractions, learning-driven 
+                                search, compilation, and optimized library runtime. This course covers deploying innovative AI models 
+                                across different production environments, addressing challenges in both training and inference workloads.
+                            </p>
+                            <div class="tutorial-topics">
+                                <h4>Key Topics Covered:</h4>
+                                <ul class="topics-list">
+                                    <li>Introduction to ML Compilation</li>
+                                    <li>Tensor Program Abstraction</li>
+                                    <li>End to End Model Execution</li>
+                                    <li>Automatic Program Optimization</li>
+                                    <li>Integration with ML Frameworks</li>
+                                    <li>GPU and Hardware Acceleration</li>
+                                    <li>Computational Graph Optimization</li>
+                                </ul>
+                            </div>
+                            <div class="tutorial-actions">
+                                <a href="https://mlc.ai/" class="tutorial-link" target="_blank" rel="noopener">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Visit Course Website
+                                </a>
+                                <!---
+                                <a href="https://mlc.ai/" class="tutorial-link secondary" target="_blank" rel="noopener">
+                                    <i class="fas fa-book"></i>
+                                    Start Learning
+                                </a>
+                                --->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ICML 2024 Tutorial -->
+                    <div class="tutorial-card">
+                        <div class="tutorial-header">
+                            <div class="tutorial-badge">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>ICML 2024 Tutorial</span>
+                            </div>
+                            <h2 class="tutorial-title">Towards Efficient Generative Large Language Model Serving: A Tutorial from Algorithms to Systems</h2>
+                            <div class="tutorial-meta">
+                                <div class="tutorial-meta-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>July 2024</span>
+                                </div>
+                                <div class="tutorial-meta-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>Xupeng Miao, Zhihao Jia</span>
+                                </div>
+                                <div class="tutorial-meta-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Vienna, Austria</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tutorial-content">
+                            <p class="tutorial-abstract">
+                                This tutorial explores comprehensive strategies for efficient serving of generative large language models, 
+                                covering both algorithmic approaches and system-level optimizations. We present a survey from algorithms 
+                                to systems, discussing key techniques for improving inference performance, reducing latency, and optimizing 
+                                resource utilization across diverse hardware platforms.
+                            </p>
+                            <div class="tutorial-topics">
+                                <h4>Key Topics Covered:</h4>
+                                <ul class="topics-list">
+                                    <li>LLM serving architectures</li>
+                                    <li>Speculative inference techniques</li>
+                                    <li>Memory optimization strategies</li>
+                                    <li>Distributed serving systems</li>
+                                    <li>Hardware acceleration</li>
+                                    <li>Performance benchmarking</li>
+                                </ul>
+                            </div>
+                            <div class="tutorial-actions">
+                                <a href="https://icml.cc/virtual/2024/tutorial/35229" class="tutorial-link" target="_blank" rel="noopener">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Tutorial Page
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SIGMOD 2024 Tutorial -->
+                    <div class="tutorial-card">
+                        <div class="tutorial-header">
+                            <div class="tutorial-badge">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>SIGMOD 2024 Tutorial</span>
+                            </div>
+                            <h2 class="tutorial-title">Efficient Systems for Large Language Model Serving</h2>
+                            <div class="tutorial-meta">
+                                <div class="tutorial-meta-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>June 2024</span>
+                                </div>
+                                <div class="tutorial-meta-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>Xupeng Miao, Zhihao Jia, Bin Cui</span>
+                                </div>
+                                <div class="tutorial-meta-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Santiago, Chile</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tutorial-content">
+                            <p class="tutorial-abstract">
+                                This tutorial at SIGMOD 2024 focuses on efficient systems for large language model serving, 
+                                presenting state-of-the-art techniques for optimizing LLM inference in database and data management contexts. 
+                                We cover system design principles, optimization strategies, and practical deployment considerations 
+                                for serving LLMs at scale.
+                            </p>
+                            <div class="tutorial-topics">
+                                <h4>Key Topics Covered:</h4>
+                                <ul class="topics-list">
+                                    <li>LLM serving system design</li>
+                                    <li>Query optimization for LLMs</li>
+                                    <li>Resource management</li>
+                                    <li>Scalability techniques</li>
+                                    <li>Integration with databases</li>
+                                    <li>Performance evaluation</li>
+                                </ul>
+                            </div>
+                            <div class="tutorial-actions">
+                                <a href="https://dl.acm.org/doi/10.1145/3626246.3654683" class="tutorial-link" target="_blank" rel="noopener">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View ACM Paper
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ASPLOS 2025 Tutorial -->
+                    <div class="tutorial-card">
+                        <div class="tutorial-header">
+                            <div class="tutorial-badge">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>ASPLOS 2025 Tutorial</span>
+                            </div>
+                            <h2 class="tutorial-title">GenAI Catalyst: Efficient Systems and Compilers for Generative AI</h2>
+                            <div class="tutorial-meta">
+                                <div class="tutorial-meta-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>March 30, 2025</span>
+                                </div>
+                                <div class="tutorial-meta-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>Xupeng Miao, Zhihao Jia</span>
+                                </div>
+                                <div class="tutorial-meta-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Rotterdam, Netherlands</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tutorial-content">
+                            <p class="tutorial-abstract">
+                                This tutorial provides a comprehensive understanding of state-of-the-art techniques in the design and 
+                                implementation of systems and compilers that optimize the performance of generative AI models, especially 
+                                for large language models. We present Mirage, a multi-level superoptimization-based tensor program compiler, 
+                                FlexFlow Serve for low-latency LLM serving, and FlexLLM for memory-efficient LLM finetuning.
+                            </p>
+                            <div class="tutorial-topics">
+                                <h4>Key Topics Covered:</h4>
+                                <ul class="topics-list">
+                                    <li>Mirage: Multi-level superoptimization compiler</li>
+                                    <li>FlexFlow Serve: Distributed LLM serving</li>
+                                    <li>FlexLLM: Memory-efficient finetuning</li>
+                                    <li>Tensor program optimization</li>
+                                    <li>Speculative inference techniques</li>
+                                    <li>GPU kernel generation</li>
+                                </ul>
+                            </div>
+                            <div class="tutorial-actions">
+                                <a href="https://genaicatalyst.github.io" class="tutorial-link" target="_blank" rel="noopener">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Visit Tutorial Website
+                                </a>
+                                <!---
+                                <a href="https://genaicatalyst.github.io" class="tutorial-link secondary" target="_blank" rel="noopener">
+                                    <i class="fas fa-book"></i>
+                                    View Materials
+                                </a>
+                                --->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Resources -->
+        <section class="resources" style="padding: 80px 0; background: var(--bg-secondary);">
+            <div class="container">
+                <h2 class="section-title">Related Resources</h2>
+                <div class="resources-grid">
+                    <div class="resource-category">
+                        <h3>Research Papers</h3>
+                        <div class="resource-links">
+                            <a href="https://arxiv.org/abs/2312.15234" class="resource-link" target="_blank" rel="noopener">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>Towards Efficient Generative LLM Serving: A Survey</span>
+                            </a>
+                            <a href="https://arxiv.org/abs/2402.18789" class="resource-link" target="_blank" rel="noopener">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>FlexLLM: Co-Serving Inference and Finetuning</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="resource-category">
+                        <h3>Projects</h3>
+                        <div class="resource-links">
+                            <a href="projects.html#mlc-llm" class="resource-link">
+                                <i class="fas fa-microchip"></i>
+                                <span>MLC-LLM</span>
+                            </a>
+                            <a href="projects.html#mirage" class="resource-link">
+                                <i class="fas fa-magic"></i>
+                                <span>Mirage Compiler</span>
+                            </a>
+                            <a href="projects.html#flexflow-serve" class="resource-link">
+                                <i class="fas fa-server"></i>
+                                <span>FlexFlow Serve</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="resource-category">
+                        <h3>Documentation</h3>
+                        <div class="resource-links">
+                            <a href="projects.html" class="resource-link">
+                                <i class="fas fa-book"></i>
+                                <span>Project Documentation</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+

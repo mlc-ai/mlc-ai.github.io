@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLC - A Community of Machine Learning Compilers</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/includes.js" defer></script>
+    <style>
+        /* Stats Section - 2 columns for GitHub stats */
+        .stats .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+    <style>
+        /* Introduction Section Styles */
+        .introduction {
+            padding: 80px 0;
+            background: var(--bg-primary);
+        }
+
+        .introduction-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .qa-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .qa-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .qa-card.with-visual {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .qa-content {
+            flex: 1;
+        }
+
+        .qa-question {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .qa-question::before {
+            content: 'Q';
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            -webkit-text-fill-color: white;
+        }
+
+        .qa-answer {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            padding-left: 3.25rem;
+        }
+
+        .qa-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .qa-visual .mission-diagram {
+            position: relative;
+            width: 250px;
+            height: 250px;
+        }
+
+        .qa-visual .diagram-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            z-index: 2;
+            box-shadow: var(--shadow-md);
+        }
+
+        .qa-visual .center-icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .qa-visual .diagram-center span {
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .qa-visual .diagram-nodes {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .qa-visual .node {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: white;
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .qa-visual .node:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-md);
+        }
+
+        .qa-visual .node i {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .qa-visual .node span {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .qa-visual .node.mobile {
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .qa-visual .node.desktop {
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+        }
+
+        .qa-visual .node.server {
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .qa-visual .node.edge {
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+        }
+
+        @media (max-width: 768px) {
+            .qa-question {
+                font-size: 1.25rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .qa-question::before {
+                width: 35px;
+                height: 35px;
+                font-size: 1.125rem;
+            }
+
+            .qa-answer {
+                padding-left: 0;
+                font-size: 1rem;
+            }
+
+            .qa-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .qa-card.with-visual {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .qa-visual .mission-diagram {
+                width: 200px;
+                height: 200px;
+            }
+
+            .qa-visual .diagram-center {
+                width: 80px;
+                height: 80px;
+            }
+
+            .qa-visual .center-icon {
+                font-size: 1.5rem;
+            }
+
+            .qa-visual .node {
+                width: 60px;
+                height: 60px;
+            }
+
+            .qa-visual .node i {
+                font-size: 1rem;
+            }
+
+            .qa-visual .node span {
+                font-size: 0.65rem;
+            }
+        }
+
+        /* Acknowledgment Section Styles */
+        .acknowledgment {
+            padding: 60px 0;
+            background: var(--bg-secondary, #f8f9fa);
+            border-top: 1px solid var(--border-color, #e0e0e0);
+        }
+
+        .acknowledgment-text {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--text-secondary, #666);
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .acknowledgment-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .acknowledgment-logo {
+            height: 40px;
+            max-width: 140px;
+            object-fit: contain;
+            filter: grayscale(10%);
+            opacity: 0.9;
+            transition: filter 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .acknowledgment-logo:hover {
+            filter: none;
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        .acknowledgment-text a {
+            color: var(--primary-color, #2563eb);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .acknowledgment-text a:hover {
+            color: var(--primary-dark, #1d4ed8);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .acknowledgment {
+                padding: 40px 0;
+            }
+
+            .acknowledgment-text {
+                font-size: 0.9rem;
+                padding: 0 1rem;
+            }
+
+            .acknowledgment-logos {
+                gap: 1.5rem;
+            }
+
+            .acknowledgment-logo {
+                height: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">MLC</h1>
+                    <h2 class="hero-subtitle">An Open Community of ML Compilations
+                    </h2>
+                    <div class="hero-buttons">
+                        <a href="projects.html" class="btn btn-primary">Explore Projects</a>
+                        <a href="courses.html" class="btn btn-secondary">View Courses</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <!--
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose MLC-LLM?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>Optimized Performance</h3>
+                        <p>Advanced compilation techniques and runtime optimizations for maximum inference speed across various hardware platforms.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-memory"></i>
+                        </div>
+                        <h3>Memory Efficient</h3>
+                        <p>Innovative memory management strategies that reduce memory footprint while maintaining high model quality.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <h3>Universal Compatibility</h3>
+                        <p>Seamless deployment across CPUs, GPUs, mobile devices, and edge computing platforms with unified APIs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h3>Open Source</h3>
+                        <p>Completely open source with active community contributions, transparent development, and permissive licensing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        -->
+
+        <!-- Introduction Section -->
+        <section class="introduction">
+            <div class="container">
+                <div class="introduction-grid">
+                    <div class="qa-card">
+                        <h3 class="qa-question">What is ML compiler?</h3>
+                        <p class="qa-answer">A machine learning compiler is a specialized compiler that transforms high-level ML models into optimized code that can efficiently run on various hardware platforms. It bridges the gap between ML frameworks and hardware backends, enabling models to run faster and use less memory across different devices from cloud servers to edge devices.</p>
+                    </div>
+                    <div class="qa-card with-visual">
+                        <div class="qa-content">
+                            <h3 class="qa-question">What is the mission of MLC community?</h3>
+                            <p class="qa-answer">The MLC community works with the broader ML system ecosystem to enable accessible deployment of ML models across cloud and edge. We aim to democratize ML deployment by providing open-source tools, frameworks, and best practices that make it easier for developers and researchers to deploy models efficiently on diverse hardware platforms.</p>
+                        </div>
+                        <div class="qa-visual">
+                            <div class="mission-diagram">
+                                <div class="diagram-center">
+                                    <div class="center-icon">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <span>MLC</span>
+                                </div>
+                                <div class="diagram-nodes">
+                                    <div class="node mobile">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <span>Mobile</span>
+                                    </div>
+                                    <div class="node desktop">
+                                        <i class="fas fa-desktop"></i>
+                                        <span>Desktop</span>
+                                    </div>
+                                    <div class="node server">
+                                        <i class="fas fa-server"></i>
+                                        <span>Server</span>
+                                    </div>
+                                    <div class="node edge">
+                                        <i class="fas fa-microchip"></i>
+                                        <span>Edge</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Preview -->
+        <section class="projects-preview">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3>MLC LLM</h3>
+                        <p>High-performance, memory-efficient LLM inference across devices and backends.</p>
+                        <a href="projects.html#mlc-llm" class="project-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>WebLLM</h3>
+                        <p>In-browser LLM inference on WebGPU with zero server dependency.</p>
+                        <a href="projects.html#webllm" class="project-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>FlexFlow Serve</h3>
+                        <p>Low-latency serving via speculative inference and token tree verification.</p>
+                        <a href="projects.html#flexflow-serve" class="project-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3>Mirage</h3>
+                        <p>Automated kernel and graph optimization for LLM workloads.</p>
+                        <a href="projects.html#mirage" class="project-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3>XGrammar</h3>
+                        <p>Constrained decoding with expressive grammars for structured generation.</p>
+                        <a href="projects.html#xgrammar" class="project-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="projects-cta">
+                    <a href="projects.html" class="btn btn-outline">View All Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Stats -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <!-- GitHub stats will be dynamically loaded here -->
+                    <div class="stat-item">
+                        <div class="stat-number">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </div>
+                        <div class="stat-label">Loading...</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </div>
+                        <div class="stat-label">Loading...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest News -->
+        <section class="latest-news">
+            <div class="container">
+                <h2 class="section-title">Latest Blogs</h2>
+                <div class="news-grid">
+                    <!-- Latest blog posts will be dynamically loaded here -->
+                    <article class="news-card">
+                        <div class="news-meta">
+                            <span class="news-date">Loading...</span>
+                            <span class="news-category">Blog</span>
+                        </div>
+                        <h3>Loading latest blog posts...</h3>
+                        <p>Please wait while we fetch the latest articles.</p>
+                        <a href="blog.html" class="news-link">View Blog</a>
+                    </article>
+                </div>
+                <div class="news-cta">
+                    <a href="blog.html" class="btn btn-outline">View All Articles</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Acknowledgment Section -->
+        <section class="acknowledgment">
+            <div class="container">
+                <p class="acknowledgment-text">The overall community is supported by <a href="https://www.nsf.gov/" target="_blank" rel="noopener noreferrer">NSF</a>, <a href="https://www.cmu.edu/catalyst/" target="_blank" rel="noopener noreferrer">CMU Catalyst</a>, <a href="https://www.purdue.edu/" target="_blank" rel="noopener noreferrer">Purdue</a>, <a href="https://www.nvidia.com/" target="_blank" rel="noopener noreferrer">NVIDIA</a>, <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer">Amazon</a>, and <a href="https://research.google/" target="_blank" rel="noopener noreferrer">Google</a>.</p>
+                <div class="acknowledgment-logos">
+                    <img src="img/logos/nsf.png" alt="NSF" class="acknowledgment-logo">
+                    <img src="img/logos/cmu.png" alt="CMU" class="acknowledgment-logo">
+                    <img src="img/logos/catalyst.png" alt="Catalyst" class="acknowledgment-logo">
+                    <img src="img/logos/purdue.png" alt="Purdue" class="acknowledgment-logo">
+                    <img src="img/logos/nvidia.png" alt="NVIDIA" class="acknowledgment-logo">
+                    <img src="img/logos/amazon.png" alt="Amazon" class="acknowledgment-logo">
+                    <img src="img/logos/google.png" alt="Google" class="acknowledgment-logo">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/script.js"></script>
+    <script src="js/blog-loader.js" defer></script>
+    <script src="js/github-stats.js" defer></script>
+</body>
+</html>
+

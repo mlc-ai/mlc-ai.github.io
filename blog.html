@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - MLC</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/includes.js" defer></script>
+    <script src="js/blog-loader.js" defer></script>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Blogs</h1>
+                <p class="page-description">
+                    Stay updated with the latest developments, tutorials, and insights 
+                    from the MLC-LLM community and development team.
+                </p>
+            </div>
+        </section>
+
+        <!-- Featured Article -->
+        <section class="featured-article">
+            <div class="container">
+                <div class="featured-card">
+                    <div class="featured-content">
+                        <div class="featured-badge">
+                            <i class="fas fa-star"></i>
+                            <span>Latest</span>
+                        </div>
+                        <h2>Loading...</h2>
+                        <p class="featured-excerpt">
+                            Loading latest blog post...
+                        </p>
+                        <div class="featured-meta">
+                            <span class="author">
+                                <i class="fas fa-user"></i>
+                                MLC Team
+                            </span>
+                            <span class="date">
+                                <i class="fas fa-calendar"></i>
+                                Loading...
+                            </span>
+                            <span class="read-time">
+                                <i class="fas fa-clock"></i>
+                                Loading...
+                            </span>
+                        </div>
+                        <a href="#" class="btn btn-primary" style="pointer-events: none;">Loading...</a>
+                    </div>
+                    <div class="featured-visual">
+                        <div class="performance-chart">
+                            <div class="chart-header">
+                                <h4>Blog Posts</h4>
+                                <span class="chart-subtitle">Latest Updates</span>
+                            </div>
+                            <div class="chart-bars">
+                                <div class="bar-item">
+                                    <span class="bar-label">Total Posts</span>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" style="width: 100%; background: var(--primary-color);">
+                                            <span class="bar-value">11</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bar-item">
+                                    <span class="bar-label">2024 Posts</span>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" style="width: 73%; background: var(--accent-color);">
+                                            <span class="bar-value">8</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bar-item">
+                                    <span class="bar-label">2025 Posts</span>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" style="width: 9%; background: var(--secondary-color);">
+                                            <span class="bar-value">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Categories -->
+        <section class="blog-categories">
+            <div class="container">
+                <div class="categories-filter">
+                    <button class="category-btn active" data-category="all">All Posts</button>
+                    <!---
+                    <button class="category-btn" data-category="research">Research</button>
+                    <button class="category-btn" data-category="tutorials">Tutorials</button>
+                    <button class="category-btn" data-category="deployment">Deployment</button>
+                    <button class="category-btn" data-category="optimization">Optimization</button>
+                    --->
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Posts Grid -->
+        <section class="blog-posts">
+            <div class="container">
+                <div class="posts-grid">
+                    <!-- Blog posts will be dynamically loaded here -->
+                </div>
+
+                <!-- View All on Blog.mlc.ai -->
+                <div class="load-more-container">
+                    <a href="https://blog.mlc.ai" class="btn btn-outline load-more-btn" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i>
+                        View All Posts on blog.mlc.ai
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Subscription 
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-card">
+                    <div class="newsletter-content">
+                        <h3>Stay Updated</h3>
+                        <p>Subscribe to our newsletter for the latest MLC-LLM updates, tutorials, and community highlights.</p>
+                        <form class="newsletter-form">
+                            <div class="form-group">
+                                <input type="email" placeholder="Enter your email address" required>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Subscribe
+                                </button>
+                            </div>
+                        </form>
+                        <p class="newsletter-note">No spam, unsubscribe at any time. We respect your privacy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        -->
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
